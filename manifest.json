@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Skip Intro",
+  "version": "1.0.0",
+  "description": "Überspringt automatisch Intros, Recaps und Outros auf Streaming-Plattformen.",
+  "permissions": ["storage"],
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.hotstar.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.amazon.com/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.co.uk/*",
+        "*://*.hbomax.com/*",
+        "*://*.max.com/*",
+        "*://*.hulu.com/*",
+        "*://*.peacocktv.com/*",
+        "*://*.paramountplus.com/*",
+        "*://*.crunchyroll.com/*",
+        "*://*.youtube.com/*",
+        "*://*.appletv.apple.com/*",
+        "*://*.tv.apple.com/*",
+        "*://*.joyn.de/*",
+        "*://*.rtlplus.de/*",
+        "*://*.wow.sky.de/*",
+        "*://*.zdf.de/*",
+        "*://*.ardmediathek.de/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
